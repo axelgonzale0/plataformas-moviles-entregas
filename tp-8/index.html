@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>TP-7: Funciones en JavaScript</title>
+</head>
+<body>
+<p>Completar con la implementación de las funciones correspondientes</p>
+<div id="resultados"></div>
+<script type="text/javascript">
+// Numeros
+
+// 1- Implementar una función "suma" que retorne la suma de 2 numeros
+// ejemplo: suma(2,3) retorna 5
+function suma(num1, num2) {
+    return num1 + num2;
+}
+
+// 2- Implementar una función "elevarAlCubo" que eleve al cubo un numero
+// ejemplo: elevarAlCubo(3) retorna 27
+function elevarAlCubo(num) {
+    return num * num * num;
+}
+
+// 3- Implementar una función "restoDivisionEntera" para devolver el resto de una división entera entre un dividendo y un divisor
+// ejemplo: restoDivisionEntera(3,2) retorna 1
+function restoDivisionEntera(dividendo, divisor) {
+    return dividendo % divisor;
+}
+
+// 4- Implementar una función "numeroPi" para devolver el numero PI
+// ejemplo: numeroPi() retorna 3,14...
+function numeroPi() {
+    return Math.PI;
+}
+
+// 5- Implementar una función "numeroRandom" para devolver un número random (aleatorio)
+// ejemplo: numeroRandom() retorna 0,123...
+function numeroRandom() {
+    return Math.random();
+}
+
+// 6- Implementar una función "numeroRandomDesdeHasta" para devolver un número random entre 2 valores recibidos como parámetros
+// ejemplo: numeroRandomDesdeHasta(1,6) retorna 3
+function numeroRandomDesdeHasta(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+// 7- Implementar una función "esPar" que reciba un número como parámetro y devuelva verdadero si el número es par, o falso si es impar
+// ejemplo: esPar(4) retorna true, esPar(5) retorna false
+function esPar(num) {
+    return num % 2 === 0;
+}
+
+// 8- Implementar una función "esPositivo" que reciba un número y devuelva true si el número es positivo, o false si es negativo o cero
+// ejemplo: esPositivo(4) retorna true, esPositivo(-3) retorna false
+function esPositivo(num) {
+    return num > 0;
+}
+
+// 9- Implementar una función "clasificarNumero" que reciba un número y retorne un mensaje indicando si el número es par o impar, y si es positivo o negativo
+// ejemplo: clasificarNumero(4) retorna "El número 4 es par y positivo."
+// ejemplo: clasificarNumero(-3) retorna "El número -3 es impar y negativo."
+function clasificarNumero(num) {
+    let parImpar = esPar(num) ? "par" : "impar";
+    let positivoNegativo = esPositivo(num) ? "positivo" : "no positivo";
+    return `El número ${num} es ${parImpar} y ${positivoNegativo}.`;
+}
+
+// Cadenas de Caracteres
+
+// 10- Implementar una función "transformarMayuscula" que transforme a mayúscula la cadena de caracteres recibida como parámetro
+// ejemplo: transformarMayuscula("Plataformas Móviles") retorna "PLATAFORMAS MÓVILES"
+function transformarMayuscula(cadena) {
+    return cadena.toUpperCase();
+}
+
+// 11- Implementar una función "primeraLetra" que nos devuelva la inicial de la cadena de caracteres recibida como parámetro
+// ejemplo: primeraLetra("Plataformas") retorna "P"
+function primeraLetra(cadena) {
+    return cadena.charAt(0);
+}
+
+// 12- Implementar una función "sinPrimeraLetra" que nos devuelva la cadena de caracteres recibida como parámetro sin la primera letra
+// ejemplo: sinPrimeraLetra("Plataformas") retorna "lataformas"
+function sinPrimeraLetra(cadena) {
+    return cadena.substring(1);
+}
+
+// 13- Implementar una función "primeraLetraMayuscula" que devuelve la cadena de caracteres recibida, pero  con su primera letra en mayúscula
+// ejemplo: primeraLetraMayuscula("plataformas") retorna "Plataformas"
+function primeraLetraMayuscula(cadena) {
+    return cadena.charAt(0).toUpperCase() + cadena.substring(1).toLowerCase();
+}
+
+// 14- Implementar una función "terminaCon" que devuelve verdadero o falso si la palabra termina con la terminación recibida
+// ejemplo: terminaCon("plataformas", "mas") retorna true
+function terminaCon(palabra, terminacion) {
+    return palabra.endsWith(terminacion);
+}
+
+// 15- Implementar una función "palabraInvertida" que devuelva la palabra invertida
+// ejemplo: palabraInvertida("hola") retorna "aloh";
+function palabraInvertida(palabra) {
+    return palabra.split('').reverse().join('');
+}
+
+// Función principal que ejecuta todas las pruebas
+function ejecutarPruebas() {
+    alert("¡Bienvenido! Vamos a probar todas las funciones implementadas.");
+    
+    // 1. Prueba de suma
+    let num1 = parseFloat(prompt("Ingresa el primer número para la suma:"));
+    let num2 = parseFloat(prompt("Ingresa el segundo número para la suma:"));
+    alert(`La suma de ${num1} + ${num2} = ${suma(num1, num2)}`);
+    
+    // 2. Prueba de elevar al cubo
+    let numCubo = parseFloat(prompt("Ingresa un número para elevar al cubo:"));
+    alert(`${numCubo} elevado al cubo = ${elevarAlCubo(numCubo)}`);
+    
+    // 3. Prueba de resto de división
+    let dividendo = parseFloat(prompt("Ingresa el dividendo:"));
+    let divisor = parseFloat(prompt("Ingresa el divisor:"));
+    alert(`El resto de ${dividendo} ÷ ${divisor} = ${restoDivisionEntera(dividendo, divisor)}`);
+    
+    // 4. Prueba de número Pi
+    alert(`El valor de π (Pi) es: ${numeroPi()}`);
+    
+    // 5. Prueba de número aleatorio
+    alert(`Número aleatorio: ${numeroRandom()}`);
+    
+    // 6. Prueba de número aleatorio en rango
+    let min = parseFloat(prompt("Ingresa el valor mínimo para el número aleatorio:"));
+    let max = parseFloat(prompt("Ingresa el valor máximo para el número aleatorio:"));
+    alert(`Número aleatorio entre ${min} y ${max}: ${numeroRandomDesdeHasta(min, max)}`);
+    
+    // 7. Prueba de es par
+    let numPar = parseFloat(prompt("Ingresa un número para verificar si es par:"));
+    alert(`¿${numPar} es par? ${esPar(numPar)}`);
+    
+    // 8. Prueba de es positivo
+    let numPositivo = parseFloat(prompt("Ingresa un número para verificar si es positivo:"));
+    alert(`¿${numPositivo} es positivo? ${esPositivo(numPositivo)}`);
+    
+    // 9. Prueba de clasificar número
+    let numClasificar = parseFloat(prompt("Ingresa un número para clasificar:"));
+    alert(clasificarNumero(numClasificar));
+    
+    // 10. Prueba de transformar a mayúscula
+    let textoMayuscula = prompt("Ingresa un texto para convertir a mayúscula:");
+    alert(`"${textoMayuscula}" en mayúscula: "${transformarMayuscula(textoMayuscula)}"`);
+    
+    // 11. Prueba de primera letra
+    let textoPrimera = prompt("Ingresa un texto para obtener la primera letra:");
+    alert(`La primera letra de "${textoPrimera}" es: "${primeraLetra(textoPrimera)}"`);
+    
+    // 12. Prueba de sin primera letra
+    let textoSinPrimera = prompt("Ingresa un texto para quitar la primera letra:");
+    alert(`"${textoSinPrimera}" sin la primera letra: "${sinPrimeraLetra(textoSinPrimera)}"`);
+    
+    // 13. Prueba de primera letra mayúscula
+    let textoPrimeraMayuscula = prompt("Ingresa un texto para poner la primera letra en mayúscula:");
+    alert(`"${textoPrimeraMayuscula}" con primera letra mayúscula: "${primeraLetraMayuscula(textoPrimeraMayuscula)}"`);
+    
+    // 14. Prueba de termina con
+    let palabra = prompt("Ingresa una palabra:");
+    let terminacion = prompt("Ingresa la terminación a verificar:");
+    alert(`¿"${palabra}" termina con "${terminacion}"? ${terminaCon(palabra, terminacion)}`);
+    
+    // 15. Prueba de palabra invertida
+    let palabraInvertir = prompt("Ingresa una palabra para invertir:");
+    alert(`"${palabraInvertir}" invertida: "${palabraInvertida(palabraInvertir)}"`);
+    
+    alert("¡Todas las pruebas completadas! Gracias por usar el programa.");
+}
+
+// Ejecutar las pruebas cuando se carga la página
+ejecutarPruebas();
+
+</script>
+</body>
+</html>

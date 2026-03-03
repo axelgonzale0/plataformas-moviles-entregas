@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TP-6 - Layouts</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 2rem;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 800px;
+        }
+        .list-group-item {
+            border: none;
+            background-color: white;
+            margin-bottom: 0.5rem;
+            border-radius: 0.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .list-group-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            transition: all 0.3s ease;
+        }
+        .list-group-item a {
+            text-decoration: none;
+            color: #495057;
+            font-weight: 500;
+        }
+        .list-group-item a:hover {
+            color: #007bff;
+        }
+        h1 {
+            color: #343a40;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>TP-6 - Layouts Responsivos</h1>
+        
+        <div class="list-group">
+            <div class="list-group-item">
+                <a href="layout-1.html">Layout 1</a>
+            </div>
+            <div class="list-group-item">
+                <a href="layout-2.html">Layout 2</a>
+            </div>
+            <div class="list-group-item">
+                <a href="layout-3.html">Layout 3</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
